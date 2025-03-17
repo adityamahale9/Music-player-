@@ -1,0 +1,210 @@
+/* General Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1f1f1f;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background: linear-gradient(45deg, #800080, #FF1493, #FF8C00);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Titles */
+.text-center {
+    text-align: center;
+}
+
+.main-title {
+    font-size: 32px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: rgba(249, 255, 255, 0.81);
+    font-size: 20px;
+}
+
+.description {
+    color: #ccc;
+}
+
+.developer {
+    color: #888;
+}
+
+/* Results Section */
+.results {
+    margin: 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.music-results {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Style for Sections */
+.section-title {
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+  border-bottom: 2px solid #555;
+  padding-bottom: 5px;
+}
+
+/* Scrollable Container */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #222;
+}
+
+/* Scrollbar Styling */
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 5px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 5px;
+}
+
+/* Square Button Styling */
+.search-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #1E90FF, #8A2BE2, #FF1493);
+
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.search-toggle:hover {
+  background: #555;
+}
+
+/* Image Styling */
+.image-container {
+    width: 100px;
+    height: 100px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* मोठ्या प्रतिमांचा भाग लपवण्यासाठी */
+    background-color: #f0f0f0; /* प्रतिमेचा पार्श्वभूमी रंग */
+    border-radius: 10px; /* जर तुम्हाला गोलसर किनारी हवे असतील तर */
+}
+
+.button-image {
+  
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* प्रतिमा क्रॉप होईल पण व्यवस्थित बसेल */
+}
+
+/* Text Styling */
+.button-text {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+ 

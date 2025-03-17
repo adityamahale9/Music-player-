@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lofify 🎼 | Music Player & Downloader</title>
+
+  <link rel="stylesheet" href="home.css">
+  <script src="saavn-search.js" defer></script>
+
+    <link rel="stylesheet" href="playlist.css">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header class="header-dark">
+    <nav class="navbar">
+      <div class="container">
+ 
+        <ul class="nav-links">
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="playlist.html">🎵 Music</a></li>
+          <li><a href="playlist.html">📜 Playlist</a></li>
+        </ul>
+      </div>
+    </nav>
+                        <div class="text-center">
+                        <select id="saavn-bitrate">
+                            <option value="4">320kbps</option>
+                            <option value="3" >160kbps</option>
+                            <option value="2">96kbps</option>
+                            <option value="1" selected="">48kbps</option>
+                        </select></div>
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="saavn-search-box" class="search-input" placeholder="Enter Name, Year, Artist">
+      <button class="search-btn" id="saavn-search-trigger">Search</button>
+    </div>
+    
+    <!-- Title & Description -->
+    <div class="container text-center">
+      <h1 class="main-title">Lofify 🎼♥️</h1>
+      <h3 class="subtitle">Music Player & Downloader</h3>
+      <p class="description">Ad-Free, Metadata, & Modern Design</p>
+      <h6 class="developer">Developed by Adi 🙋‍♂️</h6>
+    </div>
+  </header>
+  
+  <!-- Results Section -->
+  <section class="results">
+    <h5 class="section-title">Results</h5>
+    <div id="saavn-results" class="music-results" style="align-items: center; text-align: center; font-size: 20px;">
+      <h5>Featured</h5>
+    </div>
+    
+  </section>
+   
+</header>
+
+<!-- 🎶 Year Wise Songs -->
+<h2 class="section-title">📅 Year Wise Songs</h2>
+<div class="scroll-container year-buttons"></div>
+
+<!-- 🎤 Artists -->
+<h2 class="section-title">🎤 Popular Artists</h2>
+<div class="scroll-container artist-buttons"></div>
+
+<!-- 💿 Albums -->
+<h2 class="section-title">💿 Top Albums</h2>
+<div class="scroll-container album-buttons"></div>
+
+<!-- 📈 Trending Songs -->
+<h2 class="section-title">📈 Trending Songs</h2>
+<div class="scroll-container trending-buttons"></div>
+<!-- 📈 Trending Songs -->
+<h2 class="section-title">📈 Trending Songs</h2>
+<div class="scroll-container trending-buttons"></div>
+<!-- 📈 Trending Songs -->
+<h2 class="section-title">📈 Trending Songs</h2>
+<div class="scroll-container trending-buttons"></div>
+ 
+
+      <div class="audio-player">
+        <div class="player-info">
+            <img id="player-image" src="https://i.pinimg.com/originals/ed/54/d2/ed54d2fa700d36d4f2671e1be84651df.jpg" width="60">
+            <div class="player-text">
+                <h3 id="player-name">Song</h3>
+                <h4 id="player-album">Album</h4>
+            </div>
+       
+        </div>
+        <audio id="player" controls>
+            <source id="audioSource" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+       
+       <div class="player-controls">
+    <button onclick="playPrevious()">⏮ Previous</button>
+    <button onclick="playNext()">⏭ Next</button>
+
+ <!-- Favorite Button -->
+    <button id="fav-btn" onclick="toggleFavorite()" 
+            style="background: none; border: none; font-size: 20px; cursor: pointer;">
+        ❤️
+    </button>
+
+    <div class="sleep-timer">
+        <select id="sleep-timer-select" onchange="setSleepTimer()">
+            <option value="0">🕒 OFF</option>
+            <option value="1">1 min</option>
+            <option value="15">15 min</option>
+            <option value="30">30 min</option>
+            <option value="45">45 min</option>
+            <option value="60">1 hour</option>
+            <option value="120">2 hours</option>
+        </select>
+    </div>
+</div>
+                  
+    </div>
+  <!-- Quick Search Buttons -->
+  <script>
+const yearWise = [
+  { title: '2025', image: 'year2025.jpg' },
+  { title: '2024', image: 'year2024.jpg' },
+  { title: '2023', image: 'year2023.jpg' },
+  { title: '2022', image: 'year2022.jpg' },
+  { title: '2021', image: 'year2021.jpg' },
+  { title: '2020', image: 'year2020.jpg' },
+  { title: '2019', image: 'year2019.jpg' },
+  { title: '2018', image: 'year2018.jpg' },
+  { title: '2017', image: 'year2017.jpg' },
+  { title: '2016', image: 'year2016.jpg' }
+];
+
+const artists = [
+  { title: 'Arijit Singh', image: 'arijit.jpg' },
+  { title: 'Taylor Swift', image: 'taylor.jpg' },
+  { title: 'Ed Sheeran', image: 'edsheeran.jpg' },
+  { title: 'Billie Eilish', image: 'billie.jpg' },
+  { title: 'Drake', image: 'drake.jpg' },
+  { title: 'Badshah', image: 'badshah.jpg' },
+  { title: 'Neha Kakkar', image: 'neha.jpg' },
+  { title: 'Shreya Ghoshal', image: 'shreya.jpg' },
+  { title: 'Jubin Nautiyal', image: 'jubin.jpg' },
+  { title: 'Sonu Nigam', image: 'sonu.jpg' }
+];
+
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+const shuffledArtist = shuffleArray(artists);
+
+const albums = [
+  { title: 'Divide', image: 'divide.jpg' },
+  { title: 'Duniyadari', image: 'duniyadari.jpg' },
+  { title: 'Kabir Singh', image: 'kabirsingh.jpg' },
+  { title: 'Starboy', image: 'starboy.jpg' },
+  { title: 'Tamasha', image: 'tamasha.jpg' },
+  { title: 'Sairat', image: 'sairat.jpg' },
+  { title: 'Mitwaa', image: 'mitwaa.jpg' },
+  { title: 'Evolve', image: 'evolve.jpg' },
+  { title: 'ZNMD', image: 'znmd.jpg' },
+  { title: 'Moonlight', image: 'moonlight.jpg' },
+  { title: 'Folklore', image: 'folklore.jpg' },
+  { title: 'Rockstar', image: 'rockstar.jpg' },
+  { title: 'Scorpion', image: 'scorpion.jpg' },
+  { title: 'Timepass', image: 'timepass.jpg' },
+  { title: 'Ae Dil Hai Mushkil', image: 'aedil.jpg' },
+  { title: 'Naal', image: 'naal.jpg' }
+];
+const shuffledAlbums = shuffleArray(albums);
+
+const trendingSongs = [
+  { title: 'Die with a Smile', image: 'die_with_a_smile.jpg' },
+  { title: 'Not Like Us', image: 'not_like_us.jpg' },
+  { title: 'Luther', image: 'luther.jpg' },
+  { title: 'The Giver', image: 'the_giver.jpg' },
+  { title: 'Relationships', image: 'relationships.jpg' },
+  { title: 'Nadaaniyan', image: 'nadaaniyan.jpg' },
+  { title: 'Sui Ve Sui', image: 'sui_ve_sui.jpg' },
+  { title: 'Jutti Kasuri', image: 'jutti_kasuri.jpg' },
+  { title: 'Panjeban 2', image: 'panjeban_2.jpg' },
+  { title: 'Tokni', image: 'tokni.jpg' },
+  { title: 'Gulabi Sadi', image: 'gulabi_sadi.jpg' },
+  { title: 'Chiu Tai ', image: 'chiu_tai.jpg' },
+  { title: 'Mala Ved Lagale', image: 'mala_ved_lagale.jpg' },
+  { title: 'Apsara Aali', image: 'apsara_aali.jpg' },
+  { title: 'Zingaat', image: 'zingat.jpg' }
+];
+const shuffleTrending = shuffleArray(trendingSongs);
+
+
+ 
+
+// Function to create buttons for sections
+function createButtons(data, containerClass) {
+  const container = document.querySelector(containerClass);
+  data.forEach(item => {
+    const button = document.createElement('button');
+    button.classList.add('search-toggle');
+    button.innerHTML = `
+<div class="image-container">
+  <img src="images/${item.image}" alt="${item.title}" class="button-image">
+</div>
+<span class="button-text">${item.title}</span>
+        `;
+    button.setAttribute('onclick', `doSaavnSearch('${item.title}')`);
+    container.appendChild(button);
+  });
+}
+
+// Generating Buttons
+createButtons(yearWise, '.year-buttons');
+createButtons(artists, '.artist-buttons');
+createButtons(albums, '.album-buttons');
+createButtons(trendingSongs, '.trending-buttons');
+createButtons(hindiSongs, '.hindi-buttons');
+createButtons(englishSongs, '.english-buttons');
+createButtons(marathiSongs, '.marathi-buttons');
+
+
+</script>
+      <script src="function.js"></script>
+       <script src="playlist.js"></script>
+
+          <script src="sleep.js"></script>
+</body>
+
+</html>

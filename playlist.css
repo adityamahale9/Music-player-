@@ -1,0 +1,250 @@
+body{
+  background-color: black;
+}
+/* Navbar */
+.navbar {
+    background-color: #212529;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 8px;
+}
+
+/* Sleep Timer Dropdown */
+.sleep-timer select {
+    background-color: #fff;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 5px;
+    }
+
+    .sleep-timer {
+        margin-top: 10px;
+    }
+}
+.link {
+  text-align: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.link a{
+  text-decoration: none;
+  color: orangered;
+}
+.link a:hover{
+  color: greenyellow;
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: white;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    margin-bottom: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.song-image {
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.song-info {
+    flex-grow: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.song-name, .song-album {
+    font-size: 14px;
+    display: block;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.play-btn, .remove-btn {
+    padding: 5px 10px;  /* ✅ Smaller padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;  /* ✅ Smaller text */
+    width: 60px;  /* ✅ Reduced width */
+    height: 30px;  /* ✅ Smaller height */
+    text-align: center;
+}
+
+.play-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+ 
+
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#player-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.player-text {
+    display: flex;
+    flex-direction: column;
+}
+
+#player-name {
+    font-size: 16px;
+    margin: 0;
+}
+
+#player-album {
+    font-size: 14px;
+    margin: 0;
+    color: #bbb;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.player-controls button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.player-controls button:hover {
+    background: #555;
+}
+
+
+
+/* Sleep Timer Styling */
+.sleep-timer-container {
+    color: red;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sleep-timer-container label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sleep-timer-container select {
+    padding: 8px;
+    font-size: 14px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.sleep-timer-container select:focus {
+    outline: none;
+    border-color: white;
+}
+
+#sleep-timer-display {
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+}

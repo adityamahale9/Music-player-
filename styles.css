@@ -1,0 +1,239 @@
+body {
+  background:black;
+  font-family: serif;
+  font-style: bolder;
+}
+
+
+.fit-content {
+  width: fit-content;
+  width: -moz-fit-content;
+}
+ 
+/* Navbar Styling */
+.navbar {
+    background-color: #212529; /* Dark background */
+    padding: 10px 15px; /* Reduced padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    font-size: 18px; /* Smaller text */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px; /* Reduced spacing */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Reduced font size */
+    padding: 5px 8px; /* Smaller padding */
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #007bff;
+    border-radius: 3px;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 5px;
+    }
+}
+
+#loadmore {
+    width: 50%;
+    padding: 6px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 65, 108, 0.4);
+}
+
+#loadmore:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+}
+#audio-player {
+  right: 0px;
+  left: 0px;
+  position: fixed;
+  bottom: 0px;
+  padding: 20px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.song-image {
+  width: 110px;border-top-left-radius: 30px;height: 114px;
+}
+.song-text {
+  margin: 0px;color:red;max-width: 100%;
+}
+.song-container {
+  margin-bottom: 20px;border-bottom-right-radius: 30px;border: 2px solid var(--gray);border-bottom-style: solid;border-top-left-radius:30px;
+}
+audio::-webkit-media-controls-panel {
+  background-color: white;
+}
+
+a.nav-link {
+  color:red;
+}
+.f {
+    display: flex;
+    justify-content: center; /* ✅ Center the buttons */
+    align-items: center;
+    margin-top: 2px; /* ✅ Add some spacing */
+}
+
+.f button {
+    background-color: #333; /* ✅ Dark Blackish Gray */
+    color: white; /* ✅ White Text */
+    border: 2px solid #555; /* ✅ Slight Border for Contrast */
+    padding: 4px 8px; /* ✅ Smaller Size */
+    font-size: 14px; /* ✅ Adjust Font Size */
+    font-weight: bold;
+    border-radius: 5px; /* ✅ Slightly Rounded Corners */
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* ✅ Subtle Shadow */
+}
+
+.f button:hover {
+    background-color: #444; /* ✅ Slightly Lighter on Hover */
+    border-color: #777; /* ✅ Lighten Border */
+    transform: scale(1.08); /* ✅ Slight Hover Effect */
+}
+
+.f button:active {
+    transform: scale(0.95); /* ✅ Press Effect */
+}
+.footer-basic {
+  padding: 40px 0;
+  background-color: white;
+  color: white;
+}
+
+.header-dark {
+  background-size: cover;
+}
+
+.header-dark h1 {
+  color:red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  padding-top: 60px;
+}
+
+/* Highlight Clean */
+.highlight-clean {
+  color: blue;
+  background-color:red;
+  padding: 50px 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.highlight-clean p {
+  color: wheat;
+}
+
+.highlight-clean h2 {
+  font-weight: bold;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  padding-top: 0;
+  margin-top: 0;
+  color: red;
+}
+
+.highlight-clean .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 25px;
+}
+
+.highlight-clean .buttons {
+  text-align: center;
+}
+
+.highlight-clean .buttons .btn {
+  padding: 16px 32px;
+  margin: 6px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  outline: none;
+  background-color:red;
+}
+
+.highlight-clean .buttons .btn:hover {
+  opacity: 1;
+}
+
+.highlight-clean .buttons .btn:active {
+  transform: translateY(1px);
+}
+
+.highlight-clean .buttons .btn-primary {
+  background-color:red;
+  color: #fff;
+}
+
+.text-center {
+  margin: 10px 0 15px;
+}
+
+#saavn-bitrate {
+  background-color: grey;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+footer {
+  color: red;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+.error {
+ margin : 20px;
+}
